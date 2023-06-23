@@ -19,11 +19,11 @@ export default function Home() {
       
       <Infocards>
         <Center onClick={()=>{navigate("/")}} textAlign={'center'} h="110px" w="360px" padding={"110px 180px"} bg="#8FC3FF" borderRadius="10px" fontWeight={"500"} fontSize="40px">Editais Graduação</Center>
-        <Center onClick={()=>{navigate("/")}} textAlign={'center'} h="110px" w="360px" padding={"110px 180px"} bg="#8FC3FF" borderRadius="10px" fontWeight={"500"} fontSize="40px">Editais Graduação</Center>
-        <Center onClick={()=>{navigate("/")}} textAlign={'center'} h="110px" w="360px" padding={"110px 180px"} bg="#8FC3FF" borderRadius="10px" fontWeight={"500"} fontSize="40px">Editais Graduação</Center>
-        <Center onClick={()=>{navigate("/")}} textAlign={'center'} h="110px" w="360px" padding={"110px 180px"} bg="#8FC3FF" borderRadius="10px" fontWeight={"500"} fontSize="40px">Editais Graduação</Center>
-        <Center onClick={()=>{navigate("/")}} textAlign={'center'} h="110px" w="360px" padding={"110px 180px"} bg="#8FC3FF" borderRadius="10px" fontWeight={"500"} fontSize="40px">Editais Graduação</Center>
-        <Center onClick={()=>{navigate("/")}} textAlign={'center'} h="110px" w="360px" padding={"110px 180px"} bg="#8FC3FF" borderRadius="10px" fontWeight={"500"} fontSize="40px">Editais Graduação</Center>
+        <Center onClick={()=>{navigate("/")}} textAlign={'center'} h="110px" w="360px" padding={"110px 180px"} bg="#8FC3FF" borderRadius="10px" fontWeight={"500"} fontSize="40px">Editais Pós Graduação</Center>
+        <Center onClick={()=>{navigate("/")}} textAlign={'center'} h="110px" w="360px" padding={"110px 180px"} bg="#8FC3FF" borderRadius="10px" fontWeight={"500"} fontSize="40px">Sobre Bolsas</Center>
+        <Center onClick={()=>{navigate("/")}} textAlign={'center'} h="110px" w="360px" padding={"110px 180px"} bg="#8FC3FF" borderRadius="10px" fontWeight={"500"} fontSize="40px">Sobre Orientadores</Center>
+        <Center onClick={()=>{navigate("/")}} textAlign={'center'} h="110px" w="360px" padding={"110px 180px"} bg="#8FC3FF" borderRadius="10px" fontWeight={"500"} fontSize="40px">Categorias</Center>
+        <Center onClick={()=>{navigate("/")}} textAlign={'center'} h="110px" w="360px" padding={"110px 180px"} bg="#8FC3FF" borderRadius="10px" fontWeight={"500"} fontSize="40px">Orientações</Center>
       </Infocards>
 
 
