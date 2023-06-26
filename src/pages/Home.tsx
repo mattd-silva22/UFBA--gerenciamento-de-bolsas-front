@@ -1,8 +1,9 @@
-import { Box, Button, Center, Flex, Image, Text } from '@chakra-ui/react'
+import {Button, Flex, Image} from '@chakra-ui/react'
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/navbar'
-import Infocards from '../components/infocards';
+import InfocardsArea from '../components/infocardsarea';
+import BlueCards from '../components/bluecards';
 
 export default function Home() {
 
@@ -15,16 +16,16 @@ export default function Home() {
       <Navbar>
         <Button colorScheme='gray' color="#fff" _hover={{color : "#000"}} w="160px" variant='outline' onClick={()=>{navigate("/login")}}>Login</Button>
       </Navbar>
-      <Image src="./assets/banner.png" alt="UFBA Entrada" w="100vw" h="65vh"  />
+      <Image src="./assets/banner.png" alt="UFBA Entrada" w="100%" h="540px"  />
       
-      <Infocards>
-        <Center onClick={()=>{navigate("/")}} textAlign={'center'} h="110px" w="360px" padding={"110px 180px"} bg="#8FC3FF" borderRadius="10px" fontWeight={"500"} fontSize="40px">Editais Graduação</Center>
-        <Center onClick={()=>{navigate("/")}} textAlign={'center'} h="110px" w="360px" padding={"110px 180px"} bg="#8FC3FF" borderRadius="10px" fontWeight={"500"} fontSize="40px">Editais Pós Graduação</Center>
-        <Center onClick={()=>{navigate("/")}} textAlign={'center'} h="110px" w="360px" padding={"110px 180px"} bg="#8FC3FF" borderRadius="10px" fontWeight={"500"} fontSize="40px">Sobre Bolsas</Center>
-        <Center onClick={()=>{navigate("/")}} textAlign={'center'} h="110px" w="360px" padding={"110px 180px"} bg="#8FC3FF" borderRadius="10px" fontWeight={"500"} fontSize="40px">Sobre Orientadores</Center>
-        <Center onClick={()=>{navigate("/")}} textAlign={'center'} h="110px" w="360px" padding={"110px 180px"} bg="#8FC3FF" borderRadius="10px" fontWeight={"500"} fontSize="40px">Categorias</Center>
-        <Center onClick={()=>{navigate("/")}} textAlign={'center'} h="110px" w="360px" padding={"110px 180px"} bg="#8FC3FF" borderRadius="10px" fontWeight={"500"} fontSize="40px">Orientações</Center>
-      </Infocards>
+      <InfocardsArea>
+        <BlueCards> <p onClick={()=>{navigate("/")}}>Editais Graduação</p> </BlueCards>
+        <BlueCards> <p onClick={()=>{navigate("/")}}>Editais Pós Graduação</p> </BlueCards>
+        <BlueCards> <p onClick={()=>{navigate("/")}}>Sobre Bolsas</p> </BlueCards>
+        <BlueCards> <p onClick={()=>{navigate("/")}}>Sobre Orientadores</p> </BlueCards>
+        <BlueCards> <p onClick={()=>{navigate("/")}}>Categorias</p> </BlueCards>
+        <BlueCards> <p onClick={()=>{navigate("/")}}>Orientações</p> </BlueCards>
+      </InfocardsArea>
 
 
     </Flex>
