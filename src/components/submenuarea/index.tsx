@@ -17,7 +17,7 @@ export default function SubMenuArea(props: SubMenuAreaProps) {
       height={"80px"}
       justify='space-between'
       align={"center"}
-      gap={"150px"}
+      gap={"75px"}
       padding={"20px"}
       boxShadow={"0px 10px rgba(0, 0, 0, 0.2)"}
     >

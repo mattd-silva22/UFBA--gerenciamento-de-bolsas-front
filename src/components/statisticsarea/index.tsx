@@ -17,10 +17,11 @@ export default function StatisticsArea(props: StatisticsAreaProps) {
       justify='center'
       align={"center"}
       flexDir={'column'}
+      margin={'15px 0'}
     >
 
       <Text
-        fontSize={"70px"}
+        fontSize={"50px"}
         fontWeight="600"
       >
         Estatísticas
@@ -29,8 +30,8 @@ export default function StatisticsArea(props: StatisticsAreaProps) {
       <Wrap
         width="80%"
         maxW="1920px"
-        justify='center'
-        gap={"62px"}
+        justify='space-between'
+        spacing={"30px"}
       >
         {children}
       </Wrap>

@@ -16,12 +16,13 @@ export default function Statistics(props: StatisticsProps) {
     textAlign={'center'}
     justify={'center'} 
     margin={"40px 0px"}
-    h="400px" 
-    w="300px" 
+    h="300px" 
+    w="200px" 
     fontWeight={"500"} 
-    fontSize="40px">
+    fontSize="30px"
+    >
       <Text>{title}</Text>
-      <Img margin={"auto"} src={img} alt={altImage} boxSize={"165px"}></Img>
+      <Img margin={"auto"} src={img} alt={altImage} boxSize={"120px"}></Img>
       <Text>{number}</Text>
     </Flex>
   );

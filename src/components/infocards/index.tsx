@@ -13,13 +13,13 @@ export default function BlueCards(props: BlueCardsProps) {
     <Center 
     cursor="pointer" 
     textAlign={'center'} 
-    h="110px" 
-    w="360px" 
-    padding={"110px 180px"} 
+    h="90px" 
+    w="320px" 
+    padding={"90px 150px"} 
     bg="#8FC3FF" 
     borderRadius="10px" 
     fontWeight={"500"} 
-    fontSize="40px">
+    fontSize="35px">
       {children}
     </Center>
   );
