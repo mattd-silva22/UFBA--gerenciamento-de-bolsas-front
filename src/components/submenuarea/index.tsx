@@ -1,4 +1,4 @@
-import { Wrap, Text, Flex } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
 
 
