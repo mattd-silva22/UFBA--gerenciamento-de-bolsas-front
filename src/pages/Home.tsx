@@ -8,6 +8,8 @@ import InfocardsArea from '../components/infocardsarea';
 import Infocards from '../components/infocards';
 import StatisticsArea from '../components/statisticsarea';
 import Statistics from '../components/statistics'
+import FooterArea from '../components/footerarea';
+import FooterComponents from '../components/footercomponents';
 
 export default function Home() {
 
@@ -50,6 +52,57 @@ export default function Home() {
         <Statistics title="Processos em Andamento" number="1000" img="./assets/docs.png" altImage='Documentos'></Statistics>
 
       </StatisticsArea>
+
+      <FooterArea>
+
+
+        <FooterComponents
+          title={"REDES SOCIAIS"}
+        >
+          <Flex gap="20px">
+            <Img onClick={()=>{navigate("/")}} cursor={"pointer"} boxSize={"40px"} alt="Instagram" src="./assets/INSTAGRAM.png"></Img>
+            <Img onClick={()=>{navigate("/")}} cursor={"pointer"} boxSize={"40px"} alt="Facebook" src="./assets/FACEBOOK.png"></Img>
+            <Img onClick={()=>{navigate("/")}} cursor={"pointer"} boxSize={"40px"} alt="Twitter" src="./assets/TWITTER.png"></Img>
+          </Flex>
+        </FooterComponents>
+
+        <FooterComponents
+          title={"CONTATOS"}
+        >
+          <Flex gap="20px">
+            <Img boxSize={"50px"} alt="E-mail" src="./assets/EMAIL.png"></Img>
+            <Text>example.org@ufba.br</Text>
+          </Flex>
+
+          <Flex gap="20px">
+            <Img boxSize={"40px"} alt="Phone" src="./assets/PHONE.png"></Img>
+              <Flex
+                flexDir={"column"}
+              >
+                <Text>(xx) xxxx-xxxx</Text>
+                <Text>(xx) xxxx-xxxx</Text>
+                <Text>(xx) xxxx-xxxx</Text>
+              </Flex>
+          </Flex>
+          
+        </FooterComponents>
+
+        <FooterComponents
+          title={"ENDEREÇO"}
+        >
+          <Flex gap="20px">
+            <Img boxSize={"40px 50px"} alt="Location" src="./assets/LOCATION.png"></Img>
+              <Flex
+                flexDir={"column"}
+              >
+                <Text>Rua Augusto Viana, s/n - Palácio da Reitoria</Text>
+                <Text fontWeight={"bold"}>Canela, Salvador - CEP: 40110-909</Text>
+              </Flex>
+          </Flex>
+          
+        </FooterComponents>
+
+      </FooterArea>
 
 
     </Flex>
