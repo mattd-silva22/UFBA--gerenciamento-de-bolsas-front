@@ -18,7 +18,6 @@ type SidebarProps = {
                     textAlign={"center"}
                 >
                     <Text
-                        // marginLeft={"20"}
                         marginTop={"75px"}
                         fontSize={"24px"}
                     >
@@ -26,7 +25,6 @@ type SidebarProps = {
                     </Text>
 
                     <Button
-                        // marginLeft={"20"}
                         width={"175px"}
                         height={"32px"}
                         borderRadius={"20px"}
@@ -37,7 +35,6 @@ type SidebarProps = {
                         Bolsas
                     </Button>
                     <Button
-                        // marginLeft={"20"}
                         width={"175px"}
                         height={"32px"}
                         borderRadius={"20px"}
