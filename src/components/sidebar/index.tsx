@@ -1,13 +1,13 @@
-import { Button, Center, Flex, Image, Text } from "@chakra-ui/react";
-import React, { ReactNode } from "react";
+import { Button, Flex, Text } from "@chakra-ui/react";
 
 type SidebarProps = {
-    children: ReactNode;
+    isProf: boolean;
 };
   
     export default function Sidebar(props: SidebarProps) {
-        const { children } = props;
+        const { isProf } = props;
         
+        if (isProf) {
         return (
             <Flex>
                 <Flex
@@ -48,6 +48,9 @@ type SidebarProps = {
                 </Flex>
             </Flex>
         );
+        }
+        else {
+            return <></>
+        }
+  
     }
-  
-  

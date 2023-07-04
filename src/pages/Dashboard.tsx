@@ -1,8 +1,8 @@
-import { Button, Flex, Text, Img, Image } from '@chakra-ui/react'
+import { Button, Flex, Text, Img } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom';
 
 //Components import
-import React from 'react'
+import React, { useState } from 'react'
 import { redirect } from 'react-router-dom'
 import Navbar from '../components/navbar'
 import Sidebar from '../components/sidebar'
@@ -12,6 +12,18 @@ import Dashcard from '../components/dashcards';
 
 export default function Dashboard() {
   const navigate = useNavigate();
+
+  const [userInfo, setUserInfo] = useState({
+    // Isso aqui vai vir da requisição do backend, provavelmente por um useEffect assim que o componente faz o load inicial
+    // Pode até deixar isso aqui como default e fazer a requisição com o setUserInfo
+    name: "Nome Completo do Usuário",
+    matricula: "000000000",
+    CPF: "000.000.000-00",
+    instituto: "Matemática e Estatística",
+    userImage: "./assets/userImage.png",
+    isProf: true,
+  })
+
   return (
     <Flex flexDirection="column" minHeight="100vh">
       <Navbar>
@@ -19,7 +31,7 @@ export default function Dashboard() {
       </Navbar>
 
       <Flex flex="1" position="relative">
-        <Sidebar>consultar</Sidebar>
+        <Sidebar isProf={userInfo.isProf} ></Sidebar>
         
         <Flex
           height={"960px"}
