@@ -21,7 +21,7 @@ export default function Navbar(props: NavbarProps) {
         width={"90%"}
         maxW="1920px"
         p="12px"
-        border="1px solid red"
+        // border="1px solid red"
         justifyContent={"space-between"}
         alignItems="center"
       >
@@ -30,7 +30,7 @@ export default function Navbar(props: NavbarProps) {
           justifyContent="space-between"
           gap={"24px"}
           textTransform="uppercase"
-          border="1px solid red"
+          // border="1px solid red"
         >
           <Image src="./assets/brasao.png" />
           <Text color={"#fff"}>
