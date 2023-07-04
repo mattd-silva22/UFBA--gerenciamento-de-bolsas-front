@@ -1,17 +1,5 @@
-import {
-    Drawer,
-    DrawerBody,
-    DrawerHeader,
-    DrawerOverlay,
-    DrawerContent,
-    Button,
-    RadioGroup,
-    Stack,
-    Radio,
-    useDisclosure,
-    Placement,
-} from '@chakra-ui/react';
-import React, { useState, ReactNode } from "react";
+import { Button, Center, Flex, Image, Text } from "@chakra-ui/react";
+import React, { ReactNode } from "react";
 
 type SidebarProps = {
     children: ReactNode;
@@ -21,21 +9,47 @@ type SidebarProps = {
         const { children } = props;
         
         return (
-        <>
+            <Flex>
+                <Flex
+                    height="100%"
+                    flexDir={"column"}
+                    gap={"20px"}
+                    boxShadow='md' p='6' rounded='md'
+                    textAlign={"center"}
+                >
+                    <Text
+                        // marginLeft={"20"}
+                        marginTop={"75px"}
+                        fontSize={"24px"}
+                    >
+                        Consultar
+                    </Text>
 
-        Menu
+                    <Button
+                        // marginLeft={"20"}
+                        width={"175px"}
+                        height={"32px"}
+                        borderRadius={"20px"}
+                        bgColor={"#4198FF"}
+                        color={"white"}
+                        fontWeight={"700"}
+                        >
+                        Bolsas
+                    </Button>
+                    <Button
+                        // marginLeft={"20"}
+                        width={"175px"}
+                        height={"32px"}
+                        borderRadius={"20px"}
+                        bgColor={"#4198FF"}
+                        color={"white"}
+                        fontWeight={"700"}
+                        >
+                        Processos
+                    </Button>
 
-            <Drawer placement='left' isOpen={true} onClose={() => {}}>
-                
-                <DrawerContent>
-                <DrawerHeader borderBottomWidth='1px'>Consultar</DrawerHeader>
-                <DrawerBody>
-                    <p>Bolsas</p>
-                    <p>Processos</p>
-                </DrawerBody>
-                </DrawerContent>
-            </Drawer>
-         </>
+                </Flex>
+            </Flex>
         );
     }
   

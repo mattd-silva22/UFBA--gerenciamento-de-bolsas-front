@@ -8,6 +8,7 @@ import Navbar from '../components/navbar'
 import Sidebar from '../components/sidebar'
 import FooterArea from '../components/footerarea';
 import FooterComponents from '../components/footercomponents';
+import Dashcard from '../components/dashcards';
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -18,36 +19,51 @@ export default function Dashboard() {
       </Navbar>
 
       <Flex flex="1" position="relative">
+        <Sidebar>consultar</Sidebar>
+        
         <Flex
-          width="100%"
-          direction="column"
-          justify="center"
-          align="center"
+          height={"960px"}
+          width={"315px"}
+          flexDir={"row"}
+          marginLeft={"120px"}
+          gap={"300px"}
+          justifyContent={"left"}
+          alignItems={"center"}
         >
-          <Flex flexDir={'column'}>
-          <Text fontWeight={700} fontSize="25px">
-            <h1>Bolsas</h1>
-          </Text>
-          </Flex>
-          <Flex flexDir={'column'}>
-          <Text fontWeight={700} fontSize="25px">
-            <h1>Processos</h1>
-          </Text>
+          <Flex 
+          flexDir={'column'}
+          gap={5}
+          >
+            <Text fontWeight={700} fontSize="25px">
+              <h1>Bolsas</h1>
+            </Text>
+
+            <Dashcard>Teste</Dashcard>
+            <Dashcard>Teste</Dashcard>
+            <Dashcard>Teste</Dashcard>
+            <Dashcard>Teste</Dashcard>
+
           </Flex>
 
-          <Flex
-            width="150px"
-            height="200px"
-            justify="center"
-            align="center"
+          <Flex 
+          flexDir={'column'}
+          gap={5}
           >
-            oi
+            <Text fontWeight={700} fontSize="25px">
+              <h1>Processos</h1>
+            </Text>
+
+            <Dashcard>Teste</Dashcard>
+            <Dashcard>Teste</Dashcard>
+            <Dashcard>Teste</Dashcard>
+            <Dashcard>Teste</Dashcard>
+
+
+
           </Flex>
         </Flex>
 
-        {/* <Sidebar>
-        <Button colorScheme="gray" color="#fff" background="#0A2A9B" _hover={{ color: "#4198FF" }} w="160px" variant="outline" onClick={() => { redirect("/login") }}>Processos</Button>
-        </Sidebar> */}
+        
       </Flex>
 
         {/* Footer */}
