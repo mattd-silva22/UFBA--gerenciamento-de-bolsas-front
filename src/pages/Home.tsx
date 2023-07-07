@@ -59,7 +59,7 @@ export default function Home() {
         <FooterComponents
           title={"REDES SOCIAIS"}
         >
-          <Flex gap="20px">
+          <Flex gap="20px" align={"center"}>
             <Img onClick={()=>{navigate("/")}} cursor={"pointer"} boxSize={"40px"} alt="Instagram" src="./assets/INSTAGRAM.png"></Img>
             <Img onClick={()=>{navigate("/")}} cursor={"pointer"} boxSize={"40px"} alt="Facebook" src="./assets/FACEBOOK.png"></Img>
             <Img onClick={()=>{navigate("/")}} cursor={"pointer"} boxSize={"40px"} alt="Twitter" src="./assets/TWITTER.png"></Img>
@@ -69,12 +69,12 @@ export default function Home() {
         <FooterComponents
           title={"CONTATOS"}
         >
-          <Flex gap="20px">
+          <Flex gap="20px" align={"center"}>
             <Img boxSize={"50px"} alt="E-mail" src="./assets/EMAIL.png"></Img>
             <Text>example.org@ufba.br</Text>
           </Flex>
 
-          <Flex gap="20px">
+          <Flex gap="20px" align={"center"}>
             <Img boxSize={"40px"} alt="Phone" src="./assets/PHONE.png"></Img>
               <Flex
                 flexDir={"column"}
@@ -90,7 +90,7 @@ export default function Home() {
         <FooterComponents
           title={"ENDEREÇO"}
         >
-          <Flex gap="20px">
+          <Flex gap="20px" align={"center"}>
             <Img boxSize={"40px 50px"} alt="Location" src="./assets/LOCATION.png"></Img>
               <Flex
                 flexDir={"column"}
