@@ -65,7 +65,7 @@ export default function Dashboard() {
   return (
     <Flex flexDirection="column" minHeight="100vh">
       <Navbar>
-        <Button colorScheme="gray" color="#fff" background="#0A2A9B" _hover={{ color: "#4198FF" }} w="160px" variant="outline" onClick={() => { redirect("/login") }}>Sair</Button>
+        <Button colorScheme="gray" color="#fff" background="#0A2A9B" _hover={{ color: "#4198FF" }} w="160px" variant="outline" onClick={() => { navigate("/login") }}>Sair</Button>
       </Navbar>
 
       <Flex flex="1" position="relative">
