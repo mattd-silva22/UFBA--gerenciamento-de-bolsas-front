@@ -1,8 +1,8 @@
 import { Button, Flex, Text, Img } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom';
-
+import api from "../service/api";
 //Components import
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { redirect } from 'react-router-dom'
 import Navbar from '../components/navbar'
 import Sidebar from '../components/sidebar'
@@ -11,9 +11,27 @@ import FooterArea from '../components/footerarea';
 import FooterComponents from '../components/footercomponents';
 import Dashcard from '../components/dashcards';
 
+export interface IBolsa {
+  id: number;
+  nome: string;
+  remuneracao: number;
+  quantidade_total: number;
+  quantidade_restante: number;
+  data_inicio: string;
+  data_fim: string;
+}
+
+export interface IProcesso {
+  id: number;
+  data_inicio: string;
+  data_fim: string;
+  ativo: boolean;
+  id_bolsa: number;
+}
 export default function Dashboard() {
   const navigate = useNavigate();
-
+  const [bolsasList,setBolsasList] = useState<IBolsa[]>([])
+  const [processoList,setProcessoList] = useState<IProcesso[]>([])
   const [userInfo, setUserInfo] = useState({
     // Isso aqui vai vir da requisição do backend, provavelmente por um useEffect assim que o componente faz o load inicial
     // Pode até deixar isso aqui como default e fazer a requisição com o setUserInfo
@@ -25,6 +43,26 @@ export default function Dashboard() {
     isProf: true,
   })
 
+  useEffect(()=>{
+    handleLoad()
+  },[])
+
+  const handleLoad = ()=>{
+    api.get("grupo-bolsa").then(res =>{
+      const bolsasTemp = res.data
+      setBolsasList(bolsasTemp)
+    }).catch(err =>{
+      console.log(err)
+    })
+
+    api.get("processo-seletivo/getAll").then(res=>{
+      setProcessoList(res.data)
+
+    }).catch(err =>{
+      console.log(err)
+    })
+  }
+
   return (
     <Flex flexDirection="column">
       <Navbar>
@@ -33,7 +71,7 @@ export default function Dashboard() {
 
       <Flex>
         <Sidebar isProf={userInfo.isProf} ></Sidebar>
-
+        
         <Flex 
         flexDir='column'
         width="100%"
@@ -57,11 +95,13 @@ export default function Dashboard() {
               <Text fontWeight={700} fontSize="25px">
                 <h1>Bolsas</h1>
               </Text>
-
-              <Dashcard>Teste</Dashcard>
-              <Dashcard>Teste</Dashcard>
-              <Dashcard>Teste</Dashcard>
-              <Dashcard>Teste</Dashcard>
+            {bolsasList? bolsasList.map(item =>{
+              return (
+                <Dashcard bolsa={item}>Teste</Dashcard>
+              )
+              
+            }) : ""}
+           
 
             </Flex>
 
@@ -73,10 +113,7 @@ export default function Dashboard() {
                 <h1>Processos</h1>
               </Text>
 
-              <Dashcard>Teste</Dashcard>
-              <Dashcard>Teste</Dashcard>
-              <Dashcard>Teste</Dashcard>
-              <Dashcard>Teste</Dashcard>
+           
 
 
 
