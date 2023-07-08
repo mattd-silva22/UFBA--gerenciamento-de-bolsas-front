@@ -6,6 +6,7 @@ import React, { useState } from 'react'
 import { redirect } from 'react-router-dom'
 import Navbar from '../components/navbar'
 import Sidebar from '../components/sidebar'
+import UserProfile from '../components/userprofile'
 import FooterArea from '../components/footerarea';
 import FooterComponents from '../components/footercomponents';
 import Dashcard from '../components/dashcards';
@@ -25,53 +26,61 @@ export default function Dashboard() {
   })
 
   return (
-    <Flex flexDirection="column" minHeight="100vh">
+    <Flex flexDirection="column">
       <Navbar>
         <Button colorScheme="gray" color="#fff" background="#0A2A9B" _hover={{ color: "#4198FF" }} w="160px" variant="outline" onClick={() => { navigate("/login") }}>Sair</Button>
       </Navbar>
 
-      <Flex flex="1" position="relative">
+      <Flex>
         <Sidebar isProf={userInfo.isProf} ></Sidebar>
-        
-        <Flex
-          height={"960px"}
-          width={"315px"}
-          flexDir={"row"}
-          marginLeft={"120px"}
-          gap={"300px"}
-          justifyContent={"left"}
-          alignItems={"center"}
+
+        <Flex 
+        flexDir='column'
+        width="100%"
         >
-          <Flex 
-          flexDir={'column'}
-          gap={5}
+
+          <UserProfile userInfo={userInfo}></UserProfile>
+          
+          <Flex
+            width={"315px"}
+            flexDir={"row"}
+            marginLeft={"120px"}
+            marginTop={"60px"}
+            marginBottom="60px"
+            gap={"300px"}
+            justifyContent={"left"}
           >
-            <Text fontWeight={700} fontSize="25px">
-              <h1>Bolsas</h1>
-            </Text>
+            <Flex 
+            flexDir={'column'}
+            gap={5}
+            >
+              <Text fontWeight={700} fontSize="25px">
+                <h1>Bolsas</h1>
+              </Text>
 
-            <Dashcard>Teste</Dashcard>
-            <Dashcard>Teste</Dashcard>
-            <Dashcard>Teste</Dashcard>
-            <Dashcard>Teste</Dashcard>
+              <Dashcard>Teste</Dashcard>
+              <Dashcard>Teste</Dashcard>
+              <Dashcard>Teste</Dashcard>
+              <Dashcard>Teste</Dashcard>
 
-          </Flex>
+            </Flex>
 
-          <Flex 
-          flexDir={'column'}
-          gap={5}
-          >
-            <Text fontWeight={700} fontSize="25px">
-              <h1>Processos</h1>
-            </Text>
+            <Flex 
+            flexDir={'column'}
+            gap={5}
+            >
+              <Text fontWeight={700} fontSize="25px">
+                <h1>Processos</h1>
+              </Text>
 
-            <Dashcard>Teste</Dashcard>
-            <Dashcard>Teste</Dashcard>
-            <Dashcard>Teste</Dashcard>
-            <Dashcard>Teste</Dashcard>
+              <Dashcard>Teste</Dashcard>
+              <Dashcard>Teste</Dashcard>
+              <Dashcard>Teste</Dashcard>
+              <Dashcard>Teste</Dashcard>
 
 
 
+            </Flex>
           </Flex>
         </Flex>
 
