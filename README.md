@@ -16,16 +16,16 @@ Visto que esta é uma aplicação que requer o Back e o Front rodando simulatane
 
 3 - Clone esse repositório e, no terminal do diretório rode o comando: ```yarn install```
 
-4 - Clone o [repositório do Back-End](https://github.com/malucsta/gerenciamento-de-bolsas) e, no terminal do diretório rode o comando: ``````
+4 - Clone o [repositório do Back-End](https://github.com/malucsta/gerenciamento-de-bolsas) e, no terminal do diretório rode o comando: ```yarn install```
 
 ### Executando o programa
 
 #### Back-End
 1 - Aqui vem as coisas sobre abrir arquivos específicos, rodar comandos específicos tipo o do init... etc.
 
-2 - 
+2 - ...
 
-3 - 
+3 - No diretório, rode o comando ```yarn start:dev```
 
 #### Front-End
-1 - No diretório, rode o comando ```yarn start``` e siga para a porta 3001 do localhost.
+1 - No diretório, rode o comando ```yarn start``` e siga para a porta indicada no terminal para o localhost.
