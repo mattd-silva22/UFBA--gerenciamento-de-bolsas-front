@@ -44,7 +44,7 @@ export default function Dashcard(props: DashcardProps) {
               <Heading size='xs' textTransform='uppercase'>
               {bolsa.nome}</Heading>
               <Text pt='2' fontSize='sm'>
-                04/04/2023 até 06/06/2025
+                {converterData(bolsa.data_inicio)} até {converterData(bolsa.data_fim)}
               </Text>
             </Box>
           </Stack>

@@ -9,6 +9,7 @@ import Sidebar from '../components/sidebar'
 import FooterArea from '../components/footerarea';
 import FooterComponents from '../components/footercomponents';
 import Dashcard from '../components/dashcards';
+import DashcardProcesso from '../components/dashcardProcesso';
 
 export interface IBolsa {
   id: number;
@@ -104,6 +105,12 @@ export default function Dashboard() {
             <Text fontWeight={700} fontSize="25px">
               <h1>Processos</h1>
             </Text>
+
+            {processoList? processoList.map(item =>{
+              return (
+                <DashcardProcesso processo={item} bolsaList={bolsasList}/>
+              )
+            }) : ""}
 
            
 
