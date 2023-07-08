@@ -15,16 +15,19 @@ import { Box, Heading, Text, Stack, StackDivider, Card, CardHeader, CardBody,
   Flex } from '@chakra-ui/react';
 
 import React, { ReactNode } from "react";
+import { IBolsa } from '../../pages/Dashboard';
+import { converterData } from '../../utils/formatDate';
 
 type DashcardProps = {
   children: ReactNode;
+  bolsa : IBolsa
 };
   
 export default function Dashcard(props: DashcardProps) {
     const { isOpen: isOpenX, onOpen: onOpenX, onClose: onCloseX } = useDisclosure()
     const { isOpen: isOpenY, onOpen: onOpenY, onClose: onCloseY } = useDisclosure()
     const handleModal = () => { onCloseX(); onOpenY() }
-    const { children } = props;
+    const { children , bolsa } = props;
     
     const initialRef = React.useRef(null)
     const finalRef = React.useRef(null)
@@ -39,7 +42,7 @@ export default function Dashcard(props: DashcardProps) {
           <Stack spacing='4'>
             <Box>
               <Heading size='xs' textTransform='uppercase'>
-              Lorem Ipsum sit dolor a met consectetur</Heading>
+              {bolsa.nome}</Heading>
               <Text pt='2' fontSize='sm'>
                 04/04/2023 até 06/06/2025
               </Text>
@@ -48,7 +51,7 @@ export default function Dashcard(props: DashcardProps) {
           
         </CardBody>
 
-        <Button onClick={onOpenX}>Open Modal</Button>
+        <Button onClick={onOpenX}>Ver Bolsa</Button>
     
           <Modal isOpen={isOpenX} onClose={onCloseX}>
             <ModalOverlay />
@@ -58,16 +61,16 @@ export default function Dashcard(props: DashcardProps) {
               <ModalBody>
                 <Text>
                     <b>Bolsa</b>
-                    <p>khjfckhdefkhedfuefhiuasehfuiduifdsiugfsudigfiusgdfiu</p>
+                    <p>{bolsa.nome}</p>
 
                     <b>Orientador</b>
                     <h4>Fulano de tal</h4>
 
                     <b>Inicio</b>
-                    <h4>21/06/2023</h4>
+                    <h4>{converterData(bolsa.data_inicio)}</h4>
 
                     <b>Fim</b>
-                    <h4>21/06/2024</h4>
+                    <h4>{converterData(bolsa.data_fim)}</h4>
 
                 </Text>
               </ModalBody>
@@ -97,7 +100,7 @@ export default function Dashcard(props: DashcardProps) {
                     <b>FULANO DE TAL</b>
                         <br />
                         <b>Instituto</b>
-                        <p>khjfckhdefkhedfuefhiua</p>
+                        <p>Faculdade</p>
                         <b>Bolsa</b>
                         <h4>Fulano de tal</h4>
                         <b>Inicio</b>
