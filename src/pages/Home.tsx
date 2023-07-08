@@ -20,7 +20,8 @@ export default function Home() {
     justify="center"
     flexDir={'column'}>
       <Navbar>
-        <Button colorScheme='gray' color="#fff" _hover={{color : "#000"}} w="160px" variant='outline' onClick={()=>{navigate("/login")}}>Login</Button>
+        <Button colorScheme='gray' color="#000" _hover={{color : "#fff"}} w="160px" variant='outline' onClick={()=>{navigate("/login")}}>Login</Button>
+        <Button colorScheme='gray' bg="#0A2A9B" color="#fff" _hover={{color : "#000"}} w="160px" variant='outline' onClick={()=>{navigate("/cadastro")}}>Cadastro</Button>
       </Navbar>
 
       <SubMenuArea>
