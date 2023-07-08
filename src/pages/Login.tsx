@@ -1,7 +1,6 @@
 import { Button, Flex, Img, Input, InputGroup, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../components/navbar'
 
 export default function Login() {
   const navigate = useNavigate();
@@ -23,7 +22,7 @@ export default function Login() {
           align={"center"}
           justify={"center"}
         >
-          <Img src="./assets/brasao-login.png"  w="354px" h="464px"/>
+          <Img cursor="pointer" onClick={()=>{navigate("/")}} src="./assets/brasao-login.png"  w="354px" h="464px"/>
         </Flex>
 
         <Flex
@@ -42,6 +41,9 @@ export default function Login() {
             <Input placeholder='Matricula' size='lg' value={userLogin}  onChange={(e)=> setUserLogin(e.target.value)}/>
             <Input placeholder='Senha' size='lg' type="password" value={userPassword} onChange={(e)=> setUserPassword(e.target.value)}/>
             <Button colorScheme='blue' size='lg' onClick={()=>{handleLogin()}}>Login</Button>
+
+            <Text cursor='pointer' color='blue' size='md' onClick={()=>{navigate("/cadastro")}}>Ainda não tem uma conta? Clique aqui para se cadastrar</Text>
+
           </InputGroup>
         </Flex>
     </Flex>
