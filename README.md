@@ -14,16 +14,16 @@ Visto que esta é uma aplicação que requer o Back e o Front rodando simulatane
 
 2 - Tenha o Yarn instalado na máquina
 
-3 - Clone esse repositório e, no terminal do diretório rode o comando: ```yarn install```
+3 - Clone esse repositório e, no terminal do diretório rode o comando: ```yarn```
 
-4 - Clone o [repositório do Back-End](https://github.com/malucsta/gerenciamento-de-bolsas) e, no terminal do diretório rode o comando: ```yarn install```
+4 - Clone o [repositório do Back-End](https://github.com/malucsta/gerenciamento-de-bolsas) e, no terminal do diretório rode o comando: ```yarn```
 
 ### Executando o programa
 
 #### Back-End
 1 - Aqui vem as coisas sobre abrir arquivos específicos, rodar comandos específicos tipo o do init... etc.
 
-2 - ...
+2 - Usando como base o arquivo .env-example, criei um arquivo chamado .env e preecha com as infoormações de acesso do bacno de dados
 
 3 - No diretório, rode o comando ```yarn start:dev```
 
