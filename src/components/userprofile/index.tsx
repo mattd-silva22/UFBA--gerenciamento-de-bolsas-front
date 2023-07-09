@@ -4,17 +4,34 @@ import React, { ReactNode } from "react";
 
 type UserProfileProps = {
   userInfo: {
-    name: string,
-    matricula: string,
-    CPF: string,
-    instituto: string,
-    isProf: boolean,
+    nome: string,
+    matricula: number,
+    cpf: string,
+    id_instituto: number,
   }
 };
 
 export default function UserProfile(props: UserProfileProps) {
   
   const userInfo = props.userInfo;
+  const isProf = false
+
+  function selecionarInstituto(id:number) {
+    switch (id) {
+      case 1:
+        return 'Institute of Technology';
+      case 2:
+        return 'College of Engineering';
+      case 3:
+        return 'School of Business';
+      case 4:
+        return 'Faculty of Arts';
+      case 5:
+        return 'Department of Sciences';
+      default:
+        return 'Instituto não encontrado';
+    }
+  }
 
   return (
 
@@ -32,10 +49,10 @@ export default function UserProfile(props: UserProfileProps) {
       >
         <img src="./assets/userImage.png" alt="Avatar" width="100px" height="100px" />
         <Flex flexDir={"column"}>
-          <Text fontWeight="bold">{userInfo.name}</Text>
+          <Text fontWeight="bold">{userInfo.nome}</Text>
           <Text>Matrícula: {userInfo.matricula}</Text>
-          <Text>CPF: {userInfo.CPF}</Text>
-          {userInfo.isProf ? <Text>Professor do {userInfo.instituto}</Text> : <Text>Aluno do {userInfo.instituto}</Text>}
+          <Text>CPF: {userInfo.cpf}</Text>
+          {isProf ? <Text>Professor do {userInfo.id_instituto}</Text> : <Text>Aluno do {selecionarInstituto(userInfo.id_instituto)}</Text>}
 
 
         </Flex>

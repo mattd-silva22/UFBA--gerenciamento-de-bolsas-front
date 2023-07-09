@@ -7,8 +7,8 @@ export default function Login() {
   const [userPassword,setUserPassword] = useState<string>("")
   const [userLogin,setUserLogin] = useState<string>("")
 
-  const handleLogin = ()=>{
-    navigate("/dashboard")
+  const handleLogin = (userLogin:string)=>{
+    navigate(`/dashboard?userId=${userLogin}`)
   }
   return (
     <Flex
@@ -40,7 +40,7 @@ export default function Login() {
           >
             <Input placeholder='Matricula' size='lg' value={userLogin}  onChange={(e)=> setUserLogin(e.target.value)}/>
             <Input placeholder='Senha' size='lg' type="password" value={userPassword} onChange={(e)=> setUserPassword(e.target.value)}/>
-            <Button colorScheme='blue' size='lg' onClick={()=>{handleLogin()}}>Login</Button>
+            <Button colorScheme='blue' size='lg' onClick={()=>{handleLogin(userLogin)}}>Login</Button>
 
             <Text cursor='pointer' color='blue' size='md' onClick={()=>{navigate("/cadastro")}}>Ainda não tem uma conta? Clique aqui para se cadastrar</Text>
 

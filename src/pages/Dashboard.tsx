@@ -1,5 +1,5 @@
 import { Button, Flex, Text, Img } from '@chakra-ui/react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import api from "../service/api";
 //Components import
 import React, { useEffect, useState } from 'react'
@@ -29,25 +29,29 @@ export interface IProcesso {
   ativo: boolean;
   id_bolsa: number;
 }
+
+export interface IDadosAluno {
+  matricula: number;
+  cpf: string;
+  nome: string;
+  id_instituto: number;
+}
 export default function Dashboard() {
   const navigate = useNavigate();
   const [bolsasList,setBolsasList] = useState<IBolsa[]>([])
   const [processoList,setProcessoList] = useState<IProcesso[]>([])
-  const [userInfo, setUserInfo] = useState({
-    // Isso aqui vai vir da requisição do backend, provavelmente por um useEffect assim que o componente faz o load inicial
-    // Pode até deixar isso aqui como default e fazer a requisição com o setUserInfo
-    name: "Nome Completo do Usuário",
-    matricula: "000000000",
-    CPF: "000.000.000-00",
-    instituto: "Matemática e Estatística",
-    userImage: "./assets/userImage.png",
-    isProf: true,
+  const [userLoginList, setUserLoginList] = useState<IDadosAluno[]>([])
+  const [userInfo, setUserInfo] = useState<IDadosAluno>({
+    nome : "Fulano da Silva",
+    cpf :  "00012365478",
+    matricula : 12345,
+    id_instituto : 1,
   })
 
   useEffect(()=>{
     handleLoad()
   },[])
-
+  const searchParams = new URLSearchParams(document.location.search)
   const handleLoad = ()=>{
     api.get("grupo-bolsa").then(res =>{
       const bolsasTemp = res.data
@@ -62,6 +66,18 @@ export default function Dashboard() {
     }).catch(err =>{
       console.log(err)
     })
+
+    api.get("/aluno").then(res =>{
+      const data = res.data as IDadosAluno[]
+      setUserLoginList(data)
+      const currentUser = data.find(item => item.matricula.toString() === searchParams.get("userId") )
+      if(currentUser){
+        setUserInfo(currentUser)
+      }
+      
+    }).catch(err =>{
+      console.log(err)
+    })
   }
 
   return (
@@ -71,7 +87,7 @@ export default function Dashboard() {
       </Navbar>
 
       <Flex>
-        <Sidebar isProf={userInfo.isProf} ></Sidebar>
+        <Sidebar isProf={true} ></Sidebar>
         
         <Flex 
         flexDir='column'
@@ -79,7 +95,7 @@ export default function Dashboard() {
         >
 
           <UserProfile userInfo={userInfo}></UserProfile>
-          
+          <Text>{searchParams.get("userId")}</Text>
           <Flex
             width={"315px"}
             flexDir={"row"}
@@ -191,3 +207,7 @@ export default function Dashboard() {
     
   )
 }
+function useRouter() {
+  throw new Error('Function not implemented.');
+}
+
